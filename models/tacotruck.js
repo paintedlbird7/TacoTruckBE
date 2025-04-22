@@ -16,6 +16,10 @@ const commentSchema = new mongoose.Schema(
 // Define tacotruckSchema after commentSchema
 const tacotruckSchema = new mongoose.Schema(
   {
+    title: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,

@@ -13,7 +13,9 @@ router.post("/", verifyToken, async (req, res) => {
       tacotruck._doc.author = req.user;
       res.status(201).json(tacotruck);
     } catch (err) {
-      res.status(500).json({ err: err.message });
+      console.error('POST /tacotrucks error:', err);
+      // res.status(500).json({ err: err.message });
+      res.status(500).json({ message: 'Server error', error: err.message });
     }
   });  
 

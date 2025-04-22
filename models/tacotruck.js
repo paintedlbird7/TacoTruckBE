@@ -16,7 +16,7 @@ const commentSchema = new mongoose.Schema(
 // Define tacotruckSchema after commentSchema
 const tacotruckSchema = new mongoose.Schema(
   {
-    title: {
+    name: {
       type: String,
       required: true,
     },
@@ -24,11 +24,11 @@ const tacotruckSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {
-      type: String,
-      required: true,
-      enum: ['News', 'Sports', 'Games', 'Movies', 'Music', 'Television'],
-    },
+    // category: {
+    //   type: String,
+    //   required: true,
+    //   enum: ['News', 'Sports', 'Games', 'Movies', 'Music', 'Television'],
+    // },
     author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     comments: [ commentSchema],
   },
